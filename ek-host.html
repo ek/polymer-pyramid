@@ -1,0 +1,61 @@
+<link rel="import"
+      href="bower_components/polymer/polymer.html">
+<link rel="import" href="ek-child.html">
+<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.indigo-pink.min.css">
+
+<dom-module id="ek-host">
+
+  <template>
+
+    <div class="demo-grid-2 mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col">
+        Host Component: ek-host
+        <br />
+        Context.text: <span>{{context.text}}</span>
+      </div>
+    </div>
+
+    <div class="demo-grid-2 mdl-grid">
+      <div class="mdl-cell mdl-cell--4-col">
+        <ek-child context="[[context]]"></ek-child>
+      </div>
+      <div class="mdl-cell mdl-cell--4-col">
+        <ek-child context="{{context}}"></ek-child>
+      </div>
+      <div class="mdl-cell mdl-cell--4-col">
+        <ek-child context="{{context}}"></ek-child>
+      </div>
+    </div>
+
+    <div class="demo-grid-2 mdl-grid">
+      <div class="mdl-cell mdl-cell--4-col">
+        <ek-child context="{{context}}"></ek-child>
+      </div>
+      <div class="mdl-cell mdl-cell--4-col">
+        <ek-child context="{{context}}"></ek-child>
+      </div>
+      <div class="mdl-cell mdl-cell--4-col">
+        <ek-child context="{{context}}"></ek-child>
+      </div>
+    </div>
+
+  </template>
+
+  <script>
+    // register a new element called proto-element
+    Polymer({
+      is: "ek-host",
+      properties: {
+        context: {
+          type: Object,
+          notify: true
+        }
+      },
+      // add a callback to the element's prototype
+      ready: function() {
+
+      }
+    });
+  </script>
+
+</dom-module>

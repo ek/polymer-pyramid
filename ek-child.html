@@ -1,0 +1,41 @@
+<link rel="import"
+      href="bower_components/polymer/polymer.html">
+<link rel="import"
+      href="bower_components/iron-input/iron-input.html">
+<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.indigo-pink.min.css">
+
+<dom-module id="ek-child">
+
+  <template>
+    <div class="mdl-card mdl-shadow--4dp">
+      <div class="mdl-card__supporting-text">
+        <span>Child Element: ek-child</span>
+      </div>
+      <div class="mdl-card__supporting-text">
+        <input class="mdl-textfield__input" is="iron-input" bind-value="{{context.text}}">
+        <br />
+      </div>
+    </div>
+
+
+
+  </template>
+
+  <script>
+    // register a new element called proto-element
+    Polymer({
+      is: "ek-child",
+      properties: {
+        context: {
+          type: Object,
+          notify: true
+        }
+      },
+      // add a callback to the element's prototype
+      ready: function() {
+
+      }
+    });
+  </script>
+
+</dom-module>

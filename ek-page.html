@@ -1,0 +1,40 @@
+<link rel="import"
+      href="bower_components/polymer/polymer.html">
+<link rel="import" href="ek-host.html">
+<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.indigo-pink.min.css">
+
+<dom-module id="ek-page">
+
+  <template>
+    <div class="demo-grid-2 mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col">
+        <h1>Context.text:<br/><span>{{context.text}}</span></h1>
+      </div>
+    </div>
+    <ek-host
+      context="{{context}}">
+    </ek-host>
+
+  </template>
+
+  <script>
+    // register a new element called proto-element
+    Polymer({
+      is: "ek-page",
+      properties: {
+        context: {
+          type: Object,
+          notify: true,
+          value: {
+            text: 'hello'
+          }
+        }
+      },
+      // add a callback to the element's prototype
+      ready: function() {
+
+      }
+    });
+  </script>
+
+</dom-module>
